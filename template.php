@@ -1,5 +1,9 @@
 <?php
 
+// Define o título "desta" página
+$titulo = "Página Modelo";
+
+// Inclui o cabeçalho do template
 require ('_header.php');
 
 ?>
