@@ -1,4 +1,12 @@
-<!DOCTYPE html>
+<?php
+
+if ($titulo == "" OR strlen($titulo)) {
+    $titulo = "Sem Nome - O melhor de todos.";
+} else {
+    $titulo = "{$titulo} - Sem Nome";
+}
+
+?><!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">

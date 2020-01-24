@@ -1,7 +1,7 @@
 <?php
 
 // Define o título "desta" página
-$titulo = "Template do Site";
+$titulo = "Sobre Agente";
 
 // Inclui o cabeçalho do template
 require ('_header.php');
