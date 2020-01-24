@@ -1,0 +1,96 @@
+/* Reset */
+* {
+    box-sizing: border-box;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    font-size: 16px;
+    font-family: sans-serif;
+}
+body {
+    background-image: url("/img/fundo01.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+h1 {
+    margin: 0;
+    text-align: center;
+}
+
+.wrap {
+    width: 100%;
+    max-width: 1024px;
+    margin: auto;
+    background: rgba(255,255,255,.8);
+}
+
+/* Cabeçalho */
+.header {
+    display: flex;
+    background: darkgreen;
+    color: rgb(219, 250, 219);
+    align-items: center;
+}
+.header img {
+    display: block;
+    margin-right: 1rem;
+}
+.header small {
+    display: block;
+    font-size: 1rem;
+    letter-spacing: .1rem;
+    font-weight: normal;
+}
+
+/* Menu principal */
+.nav {
+    background: black;
+    text-align: right;
+}
+.nav a {
+    color: white;
+    text-decoration: none;
+    padding: 1rem;
+    display: inline-block;
+}
+.nav a:hover, .footer a:hover {
+    background: darkgreen;
+    color: rgb(219, 250, 219);
+}
+
+/* Rodapé */
+.footer {
+    background: rgb(0, 24, 0);
+    color: rgb(219, 250, 219);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.footer a {
+    display: inline-block;
+    padding: .8rem;
+    color: rgb(219, 250, 219);
+}
+.footer div {
+    text-align: center;
+    font-size: .8rem;
+}
+
+/* Conteúdo */
+.main {
+    padding: 1rem;
+}
+.main h2:first-child {
+    margin-top: .5rem;
+}
+
+/* Imagens responsivas */
+.responsiva {
+    width: auto;
+    max-width: 100%;
+}
