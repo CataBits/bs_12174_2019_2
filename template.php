@@ -3,6 +3,9 @@
 // Define o título "desta" página
 $titulo = "Template do Site";
 
+// Aponta para o CSS "desta" página
+$css = "/css/sobre.css";
+
 // Inclui o cabeçalho do template
 require ('_header.php');
 

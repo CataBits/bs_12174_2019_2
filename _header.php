@@ -1,9 +1,17 @@
 <?php
 
+// Tratamento do título da página
 if ($titulo == "" OR strlen($titulo)) {
     $titulo = "Sem Nome - O melhor de todos.";
 } else {
     $titulo = "{$titulo} - Sem Nome";
+}
+
+// Tratamento do CSS da página
+if ($css != "") {
+    $css = "<link rel=\"stylesheet\" href=\"{$css}\">";
+} else {
+    $css = null;
 }
 
 ?><!DOCTYPE html>
@@ -13,8 +21,10 @@ if ($titulo == "" OR strlen($titulo)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><?php echo $titulo ?></title>
+    <link rel="shortcut icon" href="img/logo01.png">
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/all.min.css">
+    <?php echo $css ?>
 </head>
 <body>
 <a id="topo"></a>
