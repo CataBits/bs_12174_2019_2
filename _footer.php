@@ -12,11 +12,11 @@ if ($js != "") {
 </main>
 
 <footer class="footer">
-    <a class="footer-home" href="index.php"><i class="fas fa-home"></i></a>
+    <a class="footer-home" href="index.php" title="Ir para a página inicial"><i class="fas fa-home"></i></a>
     <div class="copyright">
         &copy; Copyright 2020 André Luferat.
     </div>
-    <a class="footer-topo" href="#topo"><i class="fas fa-arrow-alt-circle-up"></i></a>
+    <a class="footer-topo" href="#topo" title="Ir para o topo desta página"><i class="fas fa-arrow-alt-circle-up"></i></a>
 </footer>
 
 </div>    

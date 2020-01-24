@@ -32,14 +32,16 @@ if ($css != "") {
 <div class="wrap">
 
     <header class="header">
-        <a href="index.php"><img src="img/logo01.png" alt="Sem Nome"></a>
+        <a href="index.php" title="Sem Nome - O melhor de todos"><img src="img/logo01.png" alt="Sem Nome"></a>
         <h1>Sem Nome<small>O melhor de todos.</small></h1>
     </header>
 
     <nav class="nav">
         <a href="index.php"><i class="fas fa-home"></i> Início</a>
         <a href="artigos.php"><i class="fas fa-pen-nib"></i> Artigos</a>
+        <a href="noticias.php"><i class="fas fa-newspaper"></i> Notícias</a>
         <a href="sobre.php"><i class="fas fa-info-circle"></i> Sobre</a>
+        <a href="procurar.php" title="Procurar no site"><i class="fas fa-search"></i></a>
     </nav>
 
     <main class="main">
