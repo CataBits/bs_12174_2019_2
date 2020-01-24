@@ -4,7 +4,10 @@
 $titulo = "Template do Site";
 
 // Aponta para o CSS "desta" página
-$css = "/css/sobre.css";
+$css = "";
+
+// Aponta para o JavaScript "desta" página
+$js = "";
 
 // Inclui o cabeçalho do template
 require ('_header.php');

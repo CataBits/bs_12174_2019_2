@@ -9,7 +9,7 @@ if ($titulo == "" OR strlen($titulo)) {
 
 // Tratamento do CSS da página
 if ($css != "") {
-    $css = "<link rel=\"stylesheet\" href=\"{$css}\">";
+    $css = "<link rel=\"stylesheet\" href=\"{$css}\">\n";
 } else {
     $css = null;
 }

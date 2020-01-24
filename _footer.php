@@ -1,3 +1,14 @@
+<?php
+
+// Tratamento do JavaScript da página
+if ($js != "") {
+    $js = "<script src=\"{$js}\"></script>\n";
+} else {
+    $js = null;
+}
+
+?>
+
 </main>
 
 <footer class="footer">
