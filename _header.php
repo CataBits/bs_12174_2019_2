@@ -37,11 +37,14 @@ if ($css != "") {
     </header>
 
     <nav class="nav">
-        <a href="index.php"><i class="fas fa-home"></i> Início</a>
-        <a href="artigos.php"><i class="fas fa-pen-nib"></i> Artigos</a>
-        <a href="noticias.php"><i class="fas fa-newspaper"></i> Notícias</a>
-        <a href="sobre.php"><i class="fas fa-info-circle"></i> Sobre</a>
-        <a href="procurar.php" title="Procurar no site"><i class="fas fa-search"></i></a>
+        <a href="index.php"><i class="fas fa-home"></i></a>
+        <div id="menulinks">
+            <a href="artigos.php"><i class="fas fa-pen-nib"></i> Artigos</a>
+            <a href="noticias.php"><i class="fas fa-newspaper"></i> Notícias</a>
+            <a href="sobre.php"><i class="fas fa-info-circle"></i> Sobre</a>
+            <a href="procurar.php" title="Procurar no site"><i class="fas fa-search"></i></a>
+        </div>
+        <a href="#menu" id="menu"><i class="fas fa-fw fa-bars"></i></a>
     </nav>
 
     <main class="main">

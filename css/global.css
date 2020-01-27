@@ -51,6 +51,8 @@ h1 {
 .nav {
     background: black;
     text-align: right;
+    display: flex;
+    justify-content: flex-end;
 }
 .nav a {
     color: white;
@@ -61,6 +63,21 @@ h1 {
 .nav a:hover, .footer a:hover {
     background: darkgreen;
     color: rgb(219, 250, 219);
+}
+.nav > a:first-child {
+    margin-right: auto;
+}
+#menu {
+    display: none;
+}
+
+@media (max-width: 520px) {
+    #menu {
+        display: block;
+    }
+    #menulinks {
+        display: none;
+    }
 }
 
 /* Rodapé */
