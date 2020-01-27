@@ -12,7 +12,7 @@ if ($js != "") {
 </main>
 
 <footer class="footer">
-    <a class="footer-home" href="index.php" title="Ir para a página inicial"><i class="fas fa-home"></i></a>
+    <a class="footer-home" href="/" title="Ir para a página inicial"><i class="fas fa-home"></i></a>
     <div class="copyright">
         &copy; Copyright 2020 André Luferat.
     </div>
@@ -21,8 +21,8 @@ if ($js != "") {
 
 </div>    
 
-<script src="js/jquery.min.js"></script>
-<script src="js/global.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/global.js"></script>
 <?php echo $js ?>
 </body>
 </html>

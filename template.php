@@ -3,10 +3,12 @@
 // Define o título "desta" página
 $titulo = "Template do Site";
 
-// Aponta para o CSS "desta" página
+// Aponta para o CSS "desta" página. Ex.: /css/contatos.css
+// Deixe vazio para não usar CSS adicional nesta página
 $css = "";
 
-// Aponta para o JavaScript "desta" página
+// Aponta para o JavaScript "desta" página. Ex.: /js/contatos.js
+// Deixe vazio para não usar JavaScript adicional nesta página
 $js = "";
 
 // Inclui o cabeçalho do template
@@ -24,6 +26,7 @@ require ('_header.php');
 
 <?php
 
+// Inclui o rodapé do template
 require ('_footer.php');
 
 ?>

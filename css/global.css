@@ -3,38 +3,39 @@
     box-sizing: border-box;
 }
 html, body {
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    margin: 0;
-    position: relative;
-    font-size: 16px;
     font-family: sans-serif;
+    font-size: 16px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: 100%;
 }
 body {
+    background-attachment: fixed;
     background-image: url("/img/fundo01.jpg");
     background-repeat: no-repeat;
-    background-attachment: fixed;
     background-size: cover;
-}
+}    
+
 h1 {
     margin: 0;
     text-align: center;
 }
 
 .wrap {
-    width: 100%;
-    max-width: 1024px;
-    margin: auto;
     background: rgba(255,255,255,.8);
+    margin: auto;
+    max-width: 1024px;
+    width: 100%;    
 }
 
-/* Cabeçalho */
+/* Cabecalho */
 .header {
-    display: flex;
+    align-items: center;
     background: darkgreen;
     color: rgb(219, 250, 219);
-    align-items: center;
+    display: flex;    
 }
 .header img {
     display: block;
@@ -43,26 +44,27 @@ h1 {
 .header small {
     display: block;
     font-size: 1rem;
-    letter-spacing: .1rem;
     font-weight: normal;
+    letter-spacing: .1rem;    
 }
 
 /* Menu principal */
 .nav {
     background: black;
-    text-align: right;
     display: flex;
     justify-content: flex-end;
+    position: relative;
+    text-align: right;    
 }
 .nav a {
     color: white;
-    text-decoration: none;
-    padding: 1rem;
     display: inline-block;
+    padding: 1rem;
+    text-decoration: none;    
 }
 .nav a:hover, .footer a:hover {
-    background: darkgreen;
-    color: rgb(219, 250, 219);
+    background: orangered;
+    color: #fff;
 }
 .nav > a:first-child {
     margin-right: auto;
@@ -70,35 +72,54 @@ h1 {
 #menu {
     display: none;
 }
+#procurar span {
+    display: none;
+}
+#menulinks {
+    display: block;
+}
 
-@media (max-width: 520px) {
+@media (max-width: 640px) {
     #menu {
         display: block;
     }
     #menulinks {
+        background: #333;
+        box-shadow: 5px 5px 5px 0px rgba(102,102,102,1);
         display: none;
+        left: 0;
+        min-width: 70%;
+        position: absolute;
+        text-align: left;
+        top: 3.1rem;        
+    }
+    #menulinks a {
+        display: block;
+    }
+    #procurar span {
+        display: inline;
     }
 }
 
-/* Rodapé */
+/* Rodape */
 .footer {
-    background: rgb(0, 24, 0);
+    align-items: center;
+    background: rgb(0,24,0);
     color: rgb(219, 250, 219);
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    justify-content: space-between;    
 }
 .footer a {
+    color: rgb(219, 250, 219);
     display: inline-block;
     padding: .8rem;
-    color: rgb(219, 250, 219);
 }
 .footer div {
-    text-align: center;
     font-size: .8rem;
+    text-align: center;
 }
 
-/* Conteúdo */
+/* Conteudo */
 .main {
     padding: 1rem;
 }
@@ -108,6 +129,6 @@ h1 {
 
 /* Imagens responsivas */
 .responsiva {
-    width: auto;
     max-width: 100%;
+    width: auto;
 }
