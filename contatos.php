@@ -16,7 +16,7 @@ require ('_header.php');
 
 ?>
 
-<form name="contatos" id="contatos" action="/processa.php" method=" ">
+<form name="contatos" id="contatos" action="/processa.php" method="post">
 
     <p>
         <label for="nome">Nome:</label>
