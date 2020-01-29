@@ -1,7 +1,7 @@
 <?php
 
 // Tratamento do título da página
-if ($titulo == "" OR strlen($titulo)) {
+if ($titulo == "") {
     $titulo = "Sem Nome - O melhor de todos.";
 } else {
     $titulo = "{$titulo} - Sem Nome";
