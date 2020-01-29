@@ -16,7 +16,15 @@ body {
     background-image: url("/img/fundo01.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-}    
+}
+a {
+    color: steelblue;
+    text-decoration: none;
+}
+a:hover {
+    color: orangered;
+    text-decoration: underline;
+}
 
 h1 {
     margin: 0;

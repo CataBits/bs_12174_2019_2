@@ -9,6 +9,8 @@ if ($js != "") {
 
 ?>
 
+<!-- FIM DO CONTEÚDO DA PÁGINA -->
+
 </main>
 
 <footer class="footer">
