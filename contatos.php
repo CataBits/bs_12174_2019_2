@@ -25,9 +25,33 @@ if ( isset($_POST['enviado']) ) :
     // Obtém o nome do form
     $mensagem = filter_input(INPUT_POST, 'mensagem', FILTER_SANITIZE_STRING);
     
+    // Verificar o preenchimento do nome
+    if (strlen($nome) < 2) {
+        $erro .= "<li>Seu nome está muito curto.</li>";
+    }
 
-    echo ("{$nome} , {$email}, {$assunto}, {$mensagem}");
-    exit();
+    // Verificar o preenchimento do e-mail
+    // O sinal "!" inverte TRUE com FALSE
+    if ( !filter_var($email, FILTER_VALIDATE_EMAIL) ) {
+        $erro .= "<li>Seu e-mail parece inválido.</li>";
+    }
+
+    // Verificar o preenchimento do assunto
+    if (strlen($assunto) < 4) {
+        $erro .= "<li>O assunto está muito curto.</li>";
+    }
+    
+    // Verificar o preenchimento da mensagem
+    if (strlen($mensagem) < 4) {
+        $erro .= "<li>A mensagem está muito curta.</li>";
+    }
+
+    // Validando erros
+    if ($erro != '') :
+        exit($erro);
+    else :
+        exit('Gravando dados no DB.....');
+    endif;
 
 endif;
 
@@ -65,7 +89,7 @@ require ('_header.php');
             </p>
             <p>
                 <label for="email">E-mail:</label>
-                <input type="email" name="email" id="email" placeholder="nome@provedor.com" value="joca@silva.com">
+                <input type="text" name="email" id="email" placeholder="nome@provedor.com" value="joca@silva.com">
             </p>
             <p>
                 <label for="assunto">Assunto:</label>
