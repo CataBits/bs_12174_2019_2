@@ -1,5 +1,8 @@
 <?php
 
+// Configuração inicial da página
+require ('_config.php');
+
 // Define o título "desta" página
 $titulo = "Faça Contato";
 
@@ -22,7 +25,7 @@ require ('_header.php');
         <h2>Faça Contato</h2>
         <p>Preencha o formulário abaixo para entrar em contato com a equipe do site.</p>
 
-        <form name="contatos" id="contatos" action="/processa.php" method="post">
+        <form name="contatos" id="contatos" action="/processa.php" method="post" accept-charset="utf-8">
             <p>
                 <label for="nome">Nome:</label>
                 <input type="text" name="nome" id="nome" placeholder="Seu nome completo">

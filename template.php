@@ -1,5 +1,8 @@
 <?php
 
+// Configuração inicial da página
+require ('_config.php');
+
 // Define o título "desta" página
 $titulo = "Template do Site";
 
