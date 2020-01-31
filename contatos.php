@@ -7,6 +7,7 @@ require ('_config.php');
 /*  SEUS CÓDIGOS PHP DESTA PÁGINA FICAM AQUI */
 /*********************************************/
 
+// Declarando variáveis
 $nome = $email = $assunto = $mensagem = $erro = $msgErro = $msgOk = '';
 
 /************************************************/
