@@ -10,6 +10,27 @@ require ('_config.php');
 // Declarando variáveis
 $nome = $email = $assunto = $mensagem = $erro = $msgErro = $msgOk = '';
 
+// Se o formulário foi enviado
+if ( isset($_POST['enviado']) ) :
+
+    // Obtém o nome do form
+    $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_STRING);
+
+    // Obtém o e-mail do form
+    $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+
+    // Obtém o nome do form
+    $assunto = filter_input(INPUT_POST, 'assunto', FILTER_SANITIZE_STRING);
+
+    // Obtém o nome do form
+    $mensagem = filter_input(INPUT_POST, 'mensagem', FILTER_SANITIZE_STRING);
+    
+    
+    echo ($nome, $email, $assunto, $mensagem);
+    exit();
+
+endif;
+
 /************************************************/
 /*  SEUS CÓDIGOS PHP DESTA PÁGINA TERMINAM AQUI */
 /************************************************/
@@ -37,7 +58,7 @@ require ('_header.php');
         <p>Preencha o formulário abaixo para entrar em contato com a equipe do site.</p>
 
         <form name="contatos" id="contatos" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post" accept-charset="utf-8">
-            <input type="hidden" name="enviado" value="sim">
+            <input type="hidden" name="enviado" value="ok">
             <p>
                 <label for="nome">Nome:</label>
                 <input type="text" name="nome" id="nome" placeholder="Seu nome completo" value="Joca da Silva">
