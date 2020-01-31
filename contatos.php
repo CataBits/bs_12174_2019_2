@@ -25,22 +25,23 @@ require ('_header.php');
         <h2>Faça Contato</h2>
         <p>Preencha o formulário abaixo para entrar em contato com a equipe do site.</p>
 
-        <form name="contatos" id="contatos" action="/processa.php" method="post" accept-charset="utf-8">
+        <form name="contatos" id="contatos" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post" accept-charset="utf-8">
+            <input type="hidden" name="enviado" value="sim">
             <p>
                 <label for="nome">Nome:</label>
-                <input type="text" name="nome" id="nome" placeholder="Seu nome completo">
+                <input type="text" name="nome" id="nome" placeholder="Seu nome completo" value="Joca da Silva">
             </p>
             <p>
                 <label for="email">E-mail:</label>
-                <input type="email" name="email" id="email" placeholder="nome@provedor.com">
+                <input type="email" name="email" id="email" placeholder="nome@provedor.com" value="joca@silva.com">
             </p>
             <p>
                 <label for="assunto">Assunto:</label>
-                <input type="text" name="assunto" id="assunto" placeholder="Assunto do contato">
+                <input type="text" name="assunto" id="assunto" placeholder="Assunto do contato" value="Assunto do Joca">
             </p>
             <p>
                 <label for="mensagem">Mensagem:</label>
-                <textarea name="mensagem" id="mensagem" placeholder="Sua mensagem"></textarea>
+                <textarea name="mensagem" id="mensagem" placeholder="Sua mensagem">Mensagem do Joca</textarea>
             </p>
             <p>
                 <label></label>
