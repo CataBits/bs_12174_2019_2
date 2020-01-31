@@ -3,6 +3,16 @@
 // Configuração inicial da página
 require ('_config.php');
 
+/*********************************************/
+/*  SEUS CÓDIGOS PHP DESTA PÁGINA FICAM AQUI */
+/*********************************************/
+
+$nome = $email = $assunto = $mensagem = $erro = $msgErro = $msgOk = '';
+
+/************************************************/
+/*  SEUS CÓDIGOS PHP DESTA PÁGINA TERMINAM AQUI */
+/************************************************/
+
 // Define o título "desta" página
 $titulo = "Faça Contato";
 
