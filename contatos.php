@@ -25,8 +25,8 @@ if ( isset($_POST['enviado']) ) :
     // Obtém o nome do form
     $mensagem = filter_input(INPUT_POST, 'mensagem', FILTER_SANITIZE_STRING);
     
-    
-    echo ($nome, $email, $assunto, $mensagem);
+
+    echo ("{$nome} , {$email}, {$assunto}, {$mensagem}");
     exit();
 
 endif;
