@@ -62,7 +62,18 @@ if ( isset($_POST['enviado']) ) :
 TEXTO;
 
     else :
-        exit('Gravando dados no DB.....');
+        
+        // Preparando para salvar os dados
+        $sql <<<SQL
+
+INSERT INTO contatos
+    (nome, email, assunto, mensagem)
+VALUES
+    ('{$nome}', '{$email}', '{$assunto}', '{$mensagem}')
+;
+
+SQL;
+        
     endif;
 
 endif;
