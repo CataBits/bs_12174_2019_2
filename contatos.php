@@ -8,7 +8,7 @@ require ('_config.php');
 /*********************************************/
 
 // "Declarando" variáveis
-$nome = $email = $assunto = $mensagem = $erro = $msgErro = $msgOk = '';
+$nome = $email = $assunto = $mensagem = $erro = $msgErro = $msgOk = $msgMail = '';
 
 // Se o formulário foi enviado
 if ( isset($_POST['enviado']) ) :
@@ -76,6 +76,24 @@ SQL;
 
         // Executa a query gerada em $sql
         $conn->query($sql);
+
+        // Prepara dados para envio por e-mail
+        $msgMail .= <<<TEXTO
+
+Um novo contato foi enviado para o site "SemNome":
+
+    Nome: {$nome}
+    E-mail: {$email}
+    Assunto: {$assunto}
+    Mensagem: {$mensagem}
+
+TEXTO;
+
+        // Enviando e-mail --> Não funciona no XAMPP
+        // O "@" oculta mensagens de erro --> CUIDADO!
+        // Dê preferência a bibliotecas de e-mail à função "mail()" do PHP
+        // Por exemplo, pesquise por "PHPMailer" e outras similares
+        @mail('admin@semnome.com', 'Novo contato com SemNome', $msgMail);
 
         // Obtendo partes do nome
         // O primeiro nome estará em $partes[0]
