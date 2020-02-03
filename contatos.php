@@ -7,7 +7,7 @@ require ('_config.php');
 /*  SEUS CÓDIGOS PHP DESTA PÁGINA FICAM AQUI */
 /*********************************************/
 
-// Declarando variáveis
+// "Declarando" variáveis
 $nome = $email = $assunto = $mensagem = $erro = $msgErro = $msgOk = '';
 
 // Se o formulário foi enviado
@@ -48,7 +48,13 @@ if ( isset($_POST['enviado']) ) :
 
     // Validando erros
     if ($erro != '') :
-        exit($erro);
+
+        // Cria mensagem de erros. Usamos HEREDOC.
+        $msgErro .= <<<MSG
+        
+        
+MSG;
+
     else :
         exit('Gravando dados no DB.....');
     endif;
