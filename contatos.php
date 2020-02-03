@@ -50,10 +50,16 @@ if ( isset($_POST['enviado']) ) :
     if ($erro != '') :
 
         // Cria mensagem de erros. Usamos HEREDOC.
-        $msgErro .= <<<MSG
+        $msgErro .= <<<TEXTO
+
+<div class="msgErro">
+    <h3>Ooooops!</h3>
+    <p>Ocorreram erros que impedem o envio do seu contato:</p>
+    <ul>{$erro}</ul>
+    <p>por favor corrija os erros e tente novamente.</p>
+</div>
         
-        
-MSG;
+TEXTO;
 
     else :
         exit('Gravando dados no DB.....');
