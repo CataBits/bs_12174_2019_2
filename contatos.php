@@ -73,6 +73,25 @@ VALUES
 ;
 
 SQL;
+
+        // Executa a query gerada em $sql
+        $conn->query($sql);
+
+        // Obtendo partes do nome
+        // O primeiro nome estará em $partes[0]
+        $partes = explode(' ', $nome);
+
+        // Gerando mensagem de agradecimento
+        $msgOk .= <<<TEXTO
+
+<div class="msgOk">
+    <h3>Olá {$partes[0]}!</h3>
+    <p>Seu contato foi enviado para a equipe do site.</p>
+    <p>Se necessário, em breve responderemos.</p>
+    <p><em>Obrigado...</em></p>
+</div>
+
+TEXTO;
         
     endif;
 

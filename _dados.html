@@ -19,7 +19,15 @@
     font-family: inherit;
     font-size: inherit;
     width: 6rem;
-}    
+    cursor: pointer;
+    background: linear-gradient(rgb(106, 177, 236), rgb(17, 76, 124));
+    color: #fff;
+    bordeR: 1px solid grey;
+}
+#jogar:hover {
+    background: linear-gradient(rgb(255, 144, 103), rgb(182, 58, 13));
+}
+
     </style>
 </head>
 <body>
@@ -42,7 +50,9 @@
         jogar(1,6);
 
         $(document).on('click', '#jogar', function(){
+
             jogar(1, 6);
+
         });
     
     });
