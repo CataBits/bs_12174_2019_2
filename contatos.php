@@ -92,7 +92,7 @@ SQL;
 </div>
 
 TEXTO;
-        
+     
     endif;
 
 endif;
@@ -121,6 +121,11 @@ require ('_header.php');
     <div class="col1">
 
         <h2>Faça Contato</h2>
+
+        <?php
+        if ($msgOk == ''):
+        ?>
+
         <p>Preencha o formulário abaixo para entrar em contato com a equipe do site.</p>
 
         <?php echo $msgErro ?>
@@ -148,6 +153,12 @@ require ('_header.php');
                 <button type="submit">Enviar</button>
             </p>
         </form>
+
+        <?php
+        else:
+            echo $msgOk;
+        endif;
+        ?>
 
     </div>
     <div class="col2">
