@@ -56,7 +56,7 @@ if ( isset($_POST['enviado']) ) :
     <h3>Ooooops!</h3>
     <p>Ocorreram erros que impedem o envio do seu contato:</p>
     <ul>{$erro}</ul>
-    <p>por favor corrija os erros e tente novamente.</p>
+    <p>Por favor corrija os erros e tente novamente.</p>
 </div>
         
 TEXTO;
@@ -92,6 +92,8 @@ require ('_header.php');
 
         <h2>Faça Contato</h2>
         <p>Preencha o formulário abaixo para entrar em contato com a equipe do site.</p>
+
+        <?php echo $msgErro ?>
 
         <form name="contatos" id="contatos" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post" accept-charset="utf-8">
             <input type="hidden" name="enviado" value="ok">

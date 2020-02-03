@@ -50,3 +50,14 @@
     padding-right: 1rem;
     padding-left: 1rem;
 }
+
+/* Mensagens de Erro */
+.msgErro {
+    display: table;
+    margin: auto;
+    padding: 0 1rem;
+    background: #ffffcc;
+    color: maroon;
+    border: 1px dotted #ff0000;
+    border-radius: .3rem;
+}
