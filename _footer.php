@@ -1,30 +1,26 @@
-<?php
+ 
 
-// Tratamento do JavaScript da página
-if ($js != "") {
-    $js = "<script src=\"{$js}\"></script>\n";
-} else {
-    $js = null;
-}
-
-?>
-
-<!-- FIM DO CONTEÚDO DA PÁGINA -->
+<!-- O CONTEÚDO DA PÁGINA TERMINA AQUI -->
 
 </main>
 
 <footer class="footer">
-    <a class="footer-home" href="/" title="Ir para a página inicial"><i class="fas fa-home"></i></a>
-    <div class="copyright">
-        &copy; Copyright 2020 André Luferat.
+    <a href="/" title="Página inicial"><i class="fas fa-fw fa-home"></i></a>
+    <div>
+        <span title="&copy; Copyright 2020 André Luferat"><i class="far fa-copyright"></i> 2020 André Luferat</span title="&copy; Copyright 2020 André Luferat">
+        <div>
+            <a href="/contatos.php">Contatos</a>
+            &bull;
+            <a href="/privacidade.php">Privacidade</a>                    
+        </div>
     </div>
-    <a class="footer-topo" href="#topo" title="Ir para o topo desta página"><i class="fas fa-arrow-alt-circle-up"></i></a>
+    <a href="#topo" title="Topo da página"><i class="fas fa-fw fa-arrow-alt-circle-up"></i></a>
 </footer>
 
-</div>    
+</div>
 
 <script src="/js/jquery.min.js"></script>
 <script src="/js/global.js"></script>
-<?php echo $js ?>
+<?php echo $js ?>    
 </body>
 </html>

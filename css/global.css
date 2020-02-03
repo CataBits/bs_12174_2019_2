@@ -25,11 +25,10 @@ a:hover {
     color: orangered;
     text-decoration: underline;
 }
-
-h1 {
-    margin: 0;
-    text-align: center;
+h1, h2, h3, h4, h5, p {
+    margin: 1rem 0;
 }
+
 
 .wrap {
     background: rgba(255,255,255,.9);
@@ -48,6 +47,10 @@ h1 {
 .header img {
     display: block;
     margin-right: 1rem;
+}
+.header h1 {
+    margin: 0;
+    text-align: center;
 }
 .header small {
     display: block;
@@ -109,22 +112,36 @@ h1 {
     }
 }
 
-/* Rodape */
+/* Rodapé */
 .footer {
-    align-items: center;
-    background: rgb(0,24,0);
-    color: rgb(219, 250, 219);
+    background: #000;
     display: flex;
-    justify-content: space-between;    
+    justify-content: space-between;
+    align-items: center;
+    color: #ddd;
+    text-align: center;
 }
-.footer a {
-    color: rgb(219, 250, 219);
-    display: inline-block;
+.footer > a {
+    color: #fff;
     padding: .8rem;
 }
-.footer div {
-    font-size: .8rem;
-    text-align: center;
+.footer > a:hover {
+    background: orangered;
+    text-decoration: none;
+}
+.footer > div {
+    font-style: italic;
+}
+.footer > div span {
+    font-size: .85rem;
+}
+.footer > div div {
+    font-size: .75rem;
+    margin-top: .3rem;
+    font-style: normal;
+}
+.footer > div a {
+    color: #ccc;
 }
 
 /* Conteudo */
@@ -139,4 +156,14 @@ h1 {
 .responsiva {
     max-width: 100%;
     width: auto;
+}
+
+/* Stick footer - Rodapé embaixo quando sem barra de rolagem */
+.wrap {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+.main {
+    flex-grow: 1;
 }

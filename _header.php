@@ -14,6 +14,13 @@ if ($css != "") {
     $css = null;
 }
 
+// Tratamento do JavaScript da página --> _footer.php
+if ($js != "") {
+    $js = "<script src=\"{$js}\"></script>\n";
+} else {
+    $js = null;
+}
+
 ?><!DOCTYPE html>
 <html lang="pt-br">
 <head>

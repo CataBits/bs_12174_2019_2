@@ -64,7 +64,7 @@ TEXTO;
     else :
         
         // Preparando para salvar os dados
-        $sql <<<SQL
+        $sql = <<<SQL
 
 INSERT INTO contatos
     (nome, email, assunto, mensagem)
