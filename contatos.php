@@ -6,6 +6,9 @@ require ('_config.php');
 // Define o título "desta" página
 $titulo = "Faça Contato";
 
+// Opção ativa no menu principal
+$menu = "contatos";
+
 // Aponta para o CSS "desta" página. Ex.: /css/contatos.css
 // Deixe vazio para não usar CSS adicional nesta página
 $css = "/css/contatos.css";
