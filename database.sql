@@ -87,19 +87,19 @@ VALUES
         'https://picsum.photos/200', 'Joca da Silva',
         'Joca Silva', 'joca@silva.com',
         'http://www.jocasilva.com/', 'Programador desde os 5 anos de idade, quando fez seu primeiro programa para MSX.',
-        '(21) 98765-4321', '22/12/1980'
+        '(21) 98765-4321', '1980-12-22'
     ),
     (
         'https://picsum.photos/200', 'Dilermano dos Santos Soares',
         'Diler Soares', 'diler@mano.com',
         'http://mano.com/', 'Escrevedor de códigos desde a época do CP-500. Programa desde que sofreu um acidente e ficou de castigo.',
-        '(21) 99887-7665', '14/04/1974'
+        '(21) 99887-7665', '1974-04-14'
     ),
     (
         'https://picsum.photos/200', 'Marineuza Sirinelson da Costa',
         'Mari Siri', 'mari@neuza.com.br',
         'http://mari.neuza.com.br/', 'Mecânica de computadores, formada pela faculdade de ciências ocultas da curva do vento, comecou na carreira após seu PC ser afogado nas chuvas do Rio de Janeiro.',
-        '(21) 98988-9988', '09/09/1999'
+        '(21) 98988-9988', '1999-09-09'
     )
 ;
 
