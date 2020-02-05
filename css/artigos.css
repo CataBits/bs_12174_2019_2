@@ -1,1 +1,37 @@
 /* CSS de artigos */
+.row {
+    display: flex;
+}
+.col1 {
+    flex-grow: 1;
+    padding-right: 1rem;
+}
+.col2 {
+    width: 250px;
+    padding-left: 1rem;
+    border-left: 3px dotted green;
+}
+
+.totalart {
+    background: rgb(202, 236, 167);
+    font-size: .8rem;
+    text-align: right;
+    padding: .5rem;
+}
+
+.artigo {
+    overflow: auto;
+    margin-bottom: 1.5rem;
+}
+.artigo:nth-child(odd) {
+    background: rgba(0, 128, 0, 0.178);
+}
+.artigo:nth-child(even) {
+    background: rgba(255, 255, 0, 0.164);
+}
+.artigo img {
+    max-width: 90px;
+    max-height: 90px;
+    float: left;
+    margin-right: 1rem;
+}
