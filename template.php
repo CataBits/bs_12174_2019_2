@@ -4,7 +4,12 @@
 require ('_config.php');
 
 // Define o título "desta" página
-$titulo = "Template do Site";
+$titulo = "";
+
+// Opção ativa no menu principal
+// Valores possíveis: "", "artigos", "noticias", "contatos", "sobre", "procurar"
+// Valores diferentes destes = ""
+$menu = "";
 
 // Aponta para o CSS "desta" página. Ex.: /css/contatos.css
 // Deixe vazio para não usar CSS adicional nesta página
