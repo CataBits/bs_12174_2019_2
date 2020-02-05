@@ -66,8 +66,19 @@ require ('_header.php');
 
 ?>
 
-<h2>Artigos</h2>
-<?php echo $artigos ?>
+<div class="row">
+    <div class="col1">
+
+        <h2>Artigos</h2>
+        <?php echo $artigos ?>
+
+    </div>
+    <div class="col2">
+
+        <h3>Categorias</h3>
+
+    </div>
+</div>
 
 <?php
 
