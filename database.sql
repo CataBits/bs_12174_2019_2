@@ -23,3 +23,21 @@ CREATE TABLE contatos (
     campo2 TEXT COMMENT 'Para uso futuro',
     status ENUM('recebido', 'lido', 'respondido', 'apagado') DEFAULT 'recebido'
 );
+
+-- Cria tabela "autores"
+CREATE TABLE autores (
+    id_autor INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    data_autor TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    thumb_autor VARCHAR(255),
+    nome_autor VARCHAR(255),
+    nome_tela VARCHAR(127) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    site VARCHAR(255),
+    curriculo TEXT,
+    telefone VARCHAR(128),
+    nascimento DATE,
+    campo1 TEXT,
+    campo2 TEXT,
+    campo3 TEXT,
+    status ENUM('inativo', 'ativo') DEFAULT 'ativo'
+);
