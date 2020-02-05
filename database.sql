@@ -39,5 +39,37 @@ CREATE TABLE autores (
     campo1 TEXT,
     campo2 TEXT,
     campo3 TEXT,
-    status ENUM('inativo', 'ativo') DEFAULT 'ativo'
+    status_autor ENUM('inativo', 'ativo') DEFAULT 'ativo'
+);
+
+-- Cria tabela "categorias"
+CREATE TABLE categorias (
+    id_categoria INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    categoria VARCHAR(63) NOT NULL,
+    campo1 TEXT
+);
+
+-- Cria tabela "artigos"
+CREATE TABLE artigos (
+    id_artigo INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    data_artigo TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    thumb_artigo VARCHAR(255),
+    titulo VARCHAR(255) NOT NULL,
+    resumo VARCHAR(255),
+    texto LONGTEXT,
+    autor_id INT NOT NULL,
+    campo1 TEXT,
+    campo2 TEXT,
+    campo3 TEXT,
+    status_artigo ENUM('inativo', 'ativo') DEFAULT 'ativo',
+    FOREIGN KEY (autor_id) REFERENCES autores (id_autor)
+);
+
+-- Cria tabela "art_cat"
+CREATE TABLE art_cat (
+    id_art_cat INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    artigo_id INT NOT NULL,
+    categoria_id INT NOT NULL,
+    FOREIGN KEY (artigo_id) REFERENCES artigos (id_artigo),
+    FOREIGN KEY (categoria_id) REFERENCES categorias (id_categoria)
 );
