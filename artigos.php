@@ -26,6 +26,11 @@ SQL;
 // Executar a query
 $res = $conn->query($sql);
 
+// Cria subtítulo com total de artigos
+$total = $res->num_rows;
+if ( $total > 1) $subtitulo = "Total de {$total} artigos. Mais recentes primeiro."
+else $subtitulo = "Total de {$total} artigo. Mais recentes primeiro."
+
 // Obter cada registro e gerar a view
 while ( $art = $res->fetch_assoc() ):
 
@@ -70,6 +75,7 @@ require ('_header.php');
     <div class="col1">
 
         <h2>Artigos</h2>
+        <p class="totalart"><?php echo $subtitulo ?></p>
         <?php echo $artigos ?>
 
     </div>
