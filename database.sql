@@ -156,4 +156,19 @@ INSERT INTO artigos (
     '1'
 );
 
-
+-- Inserindo dados em "art_cat"
+INSERT INTO art_cat
+    (artigo_id, categoria_id)
+VALUES
+    (1, 1),
+    (1, 2),
+    (1, 6),
+    (2, 1),
+    (2, 7),
+    (2, 8),
+    (3, 4),
+    (3, 5),
+    (3, 7),
+    (4, 1),
+    (4, 8)
+;
