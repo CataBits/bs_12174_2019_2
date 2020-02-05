@@ -103,4 +103,57 @@ VALUES
     )
 ;
 
+-- Inserindo dados em "categorias"
+INSERT INTO categorias (categoria) VALUES
+('Categoria 1'), 
+('Categoria 2'),
+('Categoria 3'),
+('Categoria 4'),
+('Categoria 5'),
+('Categoria 6'),
+('Categoria 7'),
+('Categoria 8');
+
+-- Inserindo dados em "artigos"
+INSERT INTO artigos (
+    data_artigo,
+    thumb_artigo,
+    titulo,
+    resumo,
+    texto,
+    autor_id
+) VALUES 
+(
+    '2020-02-03',
+    'https://picsum.photos/201',
+    'Primeiro artigo do meu site',
+    'Veja como vai aparecer no site o artigo do meu site.',
+    '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas hendrerit elit nec est varius tristique.</p><p>Nunc ante tortor, facilisis vel diam lobortis, consequat aliquam lorem.</p><p>Fusce dolor orci, fringilla eget mauris ac, lobortis imperdiet odio. </p>',
+    '1'
+),
+(
+    '2020-02-05',
+    'https://picsum.photos/202',
+    'Segundo artigo do meu site',
+    'Veja como vai aparecer no site, mais este artigo do meu site.',
+    '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas hendrerit elit nec est varius tristique.</p><p>Nunc ante tortor, facilisis vel diam lobortis, consequat aliquam lorem.</p><p>Fusce dolor orci, fringilla eget mauris ac, lobortis imperdiet odio. </p>',
+    '3'
+),
+(
+    '2020-02-05 14:30:00',
+    'https://picsum.photos/199',
+    'Terceiro artigo publicado',
+    'Mais um artigo, mais um conteúdo. Veja como esse ficará melhor.',
+    '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas hendrerit elit nec est varius tristique.</p><p>Nunc ante tortor, facilisis vel diam lobortis, consequat aliquam lorem.</p><p>Fusce dolor orci, fringilla eget mauris ac, lobortis imperdiet odio. </p>',
+    '2'
+),
+(
+    '2020-02-06 12:00:00',
+    'https://picsum.photos/198',
+    'Artigo agendado para um futuro próximo.',
+    'Como será que o PHP vai saber que este artigo é agendado para o futuro?',
+    '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas hendrerit elit nec est varius tristique.</p><p>Nunc ante tortor, facilisis vel diam lobortis, consequat aliquam lorem.</p><p>Fusce dolor orci, fringilla eget mauris ac, lobortis imperdiet odio. </p>',
+    '1'
+);
+
 
