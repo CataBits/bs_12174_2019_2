@@ -28,8 +28,8 @@ $res = $conn->query($sql);
 
 // Cria subtítulo com total de artigos
 $total = $res->num_rows;
-if ( $total > 1) $subtitulo = "Total de {$total} artigos. Mais recentes primeiro."
-else $subtitulo = "Total de {$total} artigo. Mais recentes primeiro."
+if ( $total > 1) $subtitulo = "Total de {$total} artigos. Mais recentes primeiro.";
+else $subtitulo = "Total de {$total} artigo. Mais recentes primeiro.";
 
 // Obter cada registro e gerar a view
 while ( $art = $res->fetch_assoc() ):
