@@ -3,6 +3,17 @@
 // Configuração inicial da página
 require ('_config.php');
 
+// Define o título "desta" página
+$titulo = "Artigos";
+
+// Aponta para o CSS "desta" página. Ex.: /css/contatos.css
+// Deixe vazio para não usar CSS adicional nesta página
+$css = "/css/artigos.css";
+
+// Aponta para o JavaScript "desta" página. Ex.: /js/contatos.js
+// Deixe vazio para não usar JavaScript adicional nesta página
+$js = "";
+
 /*********************************************/
 /*  SEUS CÓDIGOS PHP DESTA PÁGINA FICAM AQUI */
 /*********************************************/
@@ -49,17 +60,6 @@ TEXTO;
 /************************************************/
 /*  SEUS CÓDIGOS PHP DESTA PÁGINA TERMINAM AQUI */
 /************************************************/
-
-// Define o título "desta" página
-$titulo = "Artigos";
-
-// Aponta para o CSS "desta" página. Ex.: /css/contatos.css
-// Deixe vazio para não usar CSS adicional nesta página
-$css = "/css/artigos.css";
-
-// Aponta para o JavaScript "desta" página. Ex.: /js/contatos.js
-// Deixe vazio para não usar JavaScript adicional nesta página
-$js = "";
 
 // Inclui o cabeçalho do template
 require ('_header.php');
