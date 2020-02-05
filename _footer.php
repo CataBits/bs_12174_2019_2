@@ -10,7 +10,7 @@
         <span title="&copy; Copyright 2020 André Luferat"><i class="far fa-copyright"></i> 2020 André Luferat</span title="&copy; Copyright 2020 André Luferat">
         <div>
             <a href="/contatos.php">Contatos</a>
-            &bull;
+            &nbsp;&bull;&nbsp;
             <a href="/privacidade.php">Privacidade</a>                    
         </div>
     </div>

@@ -1,4 +1,12 @@
+// Largura da tela para responsividade
+var responsive = minWidth();
+
 $(document).ready(runApp);  // Executa aplicação quando documento estiver pronto
+
+// Largura da tela para responsividade
+function minWidth() {
+    return 640;
+}
 
 // Aplicação principal
 function runApp() {
@@ -6,6 +14,8 @@ function runApp() {
     $(document).on('click', '#menu', menuToggle);   // Monitora cliques no botão menu
 
     $(window).resize(menuChange);                   // Monitora mudanças na largura da tela
+
+    $(document).mouseup(menuClose);                 // Fecha o menu ao clicar em qualquer lugar da página
 
 }
 
@@ -42,10 +52,20 @@ function menuShow(vel) {
 // Ajusta o menu conforme a largura da viewport
 function menuChange() {
 
-    if (window.innerWidth > 640) {              // Se a viewport for maior que 640px:
+    if (window.innerWidth > responsive) {       // Se a viewport for maior que 'responsive':
         menuShow(0);                            // Mostra o menu responsivo
     } else {                                    // Senão:
         menuHide(0);                            // Oculta o menu responsivo
     }
 
+}
+
+// Fecha o menu ao clicar em qualquer lugar da página
+function menuClose(e) {
+
+    var aEsconder = $('#menulinks');
+    if (!aEsconder.is(e.target) && aEsconder.has(e.target).length == 0 && window.innerWidth < responsive + 1) {
+        menuHide('fast');
+    }
+    
 }

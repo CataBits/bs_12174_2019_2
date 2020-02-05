@@ -1,17 +1,17 @@
 -- Banco de Dados da Aplicação "Sem Nome"
+-- CUIDADO! ALTAMENTE DESTRUTIVO
 -- Apague este arquivo quando a modelagem estiver concluída!
 
--- CUIDADO! ALTAMENTE DESTRUTIVO
--- Apagar o banco caso exista 
+-- Apagando o banco de dados caso ele já exista 
 DROP DATABASE IF EXISTS semnome;  
  
--- Criar o banco de Dados em UTF-8 e case-insensitive
+-- Criando o banco de dados em UTF-8 e com buscas case-insensitive
 CREATE DATABASE semnome CHARACTER SET utf8 COLLATE utf8_general_ci;  
 
--- Seleciona o banco de dados
+-- Selecionando o banco de dados
 USE semnome;
 
--- Cria tabela "contatos"
+-- Criando a tabela "contatos"
 CREATE TABLE contatos (
     id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     data TIMESTAMP DEFAULT CURRENT_TIMESTAMP, -- "AAAA-MM-DD hh:mm:ss"
@@ -24,57 +24,59 @@ CREATE TABLE contatos (
     status ENUM('recebido', 'lido', 'respondido', 'apagado') DEFAULT 'recebido'
 );
 
--- Cria tabela "autores"
+-- Criando a tabela "autores"
 CREATE TABLE autores (
     id_autor INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     data_autor TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    thumb_autor VARCHAR(255),
-    nome_autor VARCHAR(255),
-    nome_tela VARCHAR(127) NOT NULL,
+    thumb_autor VARCHAR(255) COMMENT 'Uma imagem que representa o autor',
+    nome_autor VARCHAR(255) COMMENT 'Nome completo que só aparece nos detalhes',
+    nome_tela VARCHAR(127) NOT NULL COMMENT 'Nome curto que aparece no site',
     email VARCHAR(255) NOT NULL,
-    site VARCHAR(255),
-    curriculo TEXT,
+    site VARCHAR(255) COMMENT 'Sites começam com http://',
+    curriculo TEXT COMMENT 'Um mini-currículo do autor.',
     telefone VARCHAR(128),
-    nascimento DATE,
-    campo1 TEXT,
-    campo2 TEXT,
-    campo3 TEXT,
+    nascimento DATE COMMENT 'Formato: AAAA-MM-DD',
+    campo1 TEXT COMMENT 'Para uso futuro',
+    campo2 TEXT COMMENT 'Para uso futuro',
+    campo3 TEXT COMMENT 'Para uso futuro',
     status_autor ENUM('inativo', 'ativo') DEFAULT 'ativo'
 );
 
--- Cria tabela "categorias"
+-- Criando a tabela "categorias"
 CREATE TABLE categorias (
     id_categoria INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     categoria VARCHAR(63) NOT NULL,
-    campo1 TEXT
+    campo1 TEXT COMMENT 'Para uso futuro'
 );
 
--- Cria tabela "artigos"
+-- Criando a tabela "artigos"
 CREATE TABLE artigos (
     id_artigo INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    data_artigo TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    thumb_artigo VARCHAR(255),
+    data_artigo TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT 'Pode ser uma data no futuro',
+    thumb_artigo VARCHAR(255) COMMENT 'Uma imagem pequena que representa o artigo',
     titulo VARCHAR(255) NOT NULL,
     resumo VARCHAR(255),
-    texto LONGTEXT,
-    autor_id INT NOT NULL,
-    campo1 TEXT,
-    campo2 TEXT,
-    campo3 TEXT,
+    texto LONGTEXT COMMENT 'Pode usar HTML e CSS',
+    autor_id INT NOT NULL COMMENT 'Chave estrangeira',
+    campo1 TEXT COMMENT 'Para uso futuro',
+    campo2 TEXT COMMENT 'Para uso futuro',
+    campo3 TEXT COMMENT 'Para uso futuro',
     status_artigo ENUM('inativo', 'ativo') DEFAULT 'ativo',
     FOREIGN KEY (autor_id) REFERENCES autores (id_autor)
 );
 
--- Cria tabela "art_cat"
+-- Criando a tabela "art_cat"
 CREATE TABLE art_cat (
     id_art_cat INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    artigo_id INT NOT NULL,
-    categoria_id INT NOT NULL,
+    artigo_id INT NOT NULL COMMENT 'Chave estrangeira',
+    categoria_id INT NOT NULL COMMENT 'Chave estrangeira',
     FOREIGN KEY (artigo_id) REFERENCES artigos (id_artigo),
     FOREIGN KEY (categoria_id) REFERENCES categorias (id_categoria)
 );
 
--- Inserindo dados em "autores" --> Popular a tabela "autores"
+-- Inserindo dados em "autores"
+-- ou
+-- Populando a tabela "autores"
 INSERT INTO autores
     (
         thumb_autor, nome_autor,
@@ -103,7 +105,7 @@ VALUES
     )
 ;
 
--- Inserindo dados em "categorias"
+-- Populando a tabela "categorias"
 INSERT INTO categorias (categoria) VALUES
 ('Categoria 1'), 
 ('Categoria 2'),
@@ -114,7 +116,7 @@ INSERT INTO categorias (categoria) VALUES
 ('Categoria 7'),
 ('Categoria 8');
 
--- Inserindo dados em "artigos"
+-- Populando a tabela "artigos"
 INSERT INTO artigos (
     data_artigo,
     thumb_artigo,
@@ -156,7 +158,7 @@ INSERT INTO artigos (
     '1'
 );
 
--- Inserindo dados em "art_cat"
+-- Populando a tabela "art_cat"
 INSERT INTO art_cat
     (artigo_id, categoria_id)
 VALUES
