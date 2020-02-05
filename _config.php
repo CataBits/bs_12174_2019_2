@@ -5,7 +5,7 @@ header("Content-type: text/html; charset=utf-8");
 // Seleção do servidor de banco de dados //
 //if ($_SERVER['SERVER_NAME'] == 'localhost') :
     // Conexão com MySQL do XAMPP
-    $conn = new mysqli('localhost', 'root', '', 'semnome');
+    $conn = new mysqli('localhost', 'root', 'usbw', 'semnome');
 // else :
 //     // Conexão com MySQL do provedor de hospedagem
 //     // Preencha os campos conforme os dados do provedor
@@ -25,5 +25,22 @@ $conn->query('SET character_set_results=utf8');
 // MySQL com nomes de dias da semana e meses em português
 $conn->query('SET GLOBAL lc_time_names = pt_BR');
 $conn->query('SET lc_time_names = pt_BR');
+
+/***** Funções globais *****/
+
+// Sanitiza uma string da melhor forma
+function sanitiza($texto) {
+
+    // Remove espaços do começo e do fim de $texto
+    $texto = trim($texto);
+
+    // Procura e remove espaços duplicados no meio de $texto
+    while( strpos($texto, '  ') )
+        $texto = str_replace('  ', ' ', $texto);
+
+    // Retorna a string sanitizada
+    return $texto;
+
+}
 
 ?>

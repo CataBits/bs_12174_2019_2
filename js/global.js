@@ -37,6 +37,7 @@ function menuHide(vel) {
     $('#menulinks').slideUp(vel);               // Esconde o menu responsivo
     $('#menu i').addClass('fa-bars');           // Mostra o ícone "☰" no botão do menu
     $('#menu i').removeClass('fa-times');       // Oculta o ícone de "X" no botão do menu
+    $('#menu').removeClass('active');           // Remove a classe 'active' do botão do menu
 
 }
 
@@ -46,6 +47,7 @@ function menuShow(vel) {
     $('#menulinks').slideDown(vel);             // Mostra o menu responsivo
     $('#menu i').addClass('fa-times');          // Mostra o ícone "X" no botão do menu
     $('#menu i').removeClass('fa-bars');        // Oculta o ícone "☰" no botão do menu
+    $('#menu').addClass('active');              // Aplica a classe 'active' no botão do menu
 
 }
 

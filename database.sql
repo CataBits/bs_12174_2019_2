@@ -126,7 +126,7 @@ INSERT INTO artigos (
     autor_id
 ) VALUES 
 (
-    '2020-02-03',
+    '2020-02-03 11:44:00',
     'https://picsum.photos/201',
     'Primeiro artigo do meu site',
     'Veja como vai aparecer no site o artigo do meu site.',
@@ -134,7 +134,7 @@ INSERT INTO artigos (
     '1'
 ),
 (
-    '2020-02-05',
+    '2020-02-05 08:12:27',
     'https://picsum.photos/202',
     'Segundo artigo do meu site',
     'Veja como vai aparecer no site, mais este artigo do meu site.',
@@ -150,7 +150,7 @@ INSERT INTO artigos (
     '2'
 ),
 (
-    '2020-02-06 12:00:00',
+    '2020-02-05 14:31:00',
     'https://picsum.photos/198',
     'Artigo agendado para um futuro próximo.',
     'Como será que o PHP vai saber que este artigo é agendado para o futuro?',

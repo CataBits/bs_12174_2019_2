@@ -34,17 +34,17 @@ else $subtitulo = "Total de {$total} artigo. Mais recentes primeiro.";
 // Obter cada registro e gerar a view
 while ( $art = $res->fetch_assoc() ):
 
-    $artigos .= "
+    $artigos .= <<<HTML
 
-<div class=\"artigo\">
-    <a href=\"/artigo.php?id={$art['id_artigo']}\">
-        <img src=\"{$art['thumb_artigo']}\" alt=\"{$art['titulo']}\">
+<div class="artigo">
+    <a href="/artigo.php?id={$art['id_artigo']}">
+        <img src="{$art['thumb_artigo']}" alt="{$art['titulo']}">
         <h3>{$art['titulo']}</h3>
     </a>
     <span>{$art['resumo']}</span>
 </div>
 
-";   
+HTML;   
 
 endwhile;
 

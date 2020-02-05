@@ -73,7 +73,7 @@ h1, h2, h3, h4, h5, p {
     padding: 1rem;
     text-decoration: none;    
 }
-.nav a:hover, .footer a:hover {
+.nav a:hover, .footer a:hover, .active {
     background: orangered;
     color: #fff;
 }

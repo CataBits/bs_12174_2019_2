@@ -14,13 +14,13 @@ $nome = $email = $assunto = $mensagem = $erro = $msgErro = $msgOk = $msgMail = '
 if ( isset($_POST['enviado']) ) :
 
     // Obtém o nome do form
-    $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_STRING);
+    $nome = sanitiza( filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_STRING) );
 
     // Obtém o e-mail do form
-    $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+    $email = sanitiza( filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL) );
 
     // Obtém o nome do form
-    $assunto = filter_input(INPUT_POST, 'assunto', FILTER_SANITIZE_STRING);
+    $assunto = sanitiza( filter_input(INPUT_POST, 'assunto', FILTER_SANITIZE_STRING) );
 
     // Obtém o nome do form
     $mensagem = filter_input(INPUT_POST, 'mensagem', FILTER_SANITIZE_STRING);

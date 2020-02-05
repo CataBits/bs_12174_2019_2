@@ -39,6 +39,7 @@
 }
 .col1 input, .col1 textarea {
     width: 100%;
+    resize: vertical;
 }
 .col1 textarea {
     height: 6rem;
