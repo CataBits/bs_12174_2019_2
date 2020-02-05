@@ -88,7 +88,7 @@ h1, h2, h3, h4, h5, p {
     display: none;
 }
 #menulinks {
-    display: block;
+    display: flex;
 }
 
 @media (max-width: 640px) {

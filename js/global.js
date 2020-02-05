@@ -23,9 +23,9 @@ function runApp() {
 function menuToggle() {
 
     if ( $('#menulinks').is(':visible') ) {     // Se o menu responsivo é visível:
-        menuHide('fast');                       // Oculta o menu responsivo
+        menuHide('fast');                           // Oculta o menu responsivo
     } else {                                    // Senão:
-        menuShow('fast');                       // Mostra o menu responsivo
+        menuShow('fast');                           // Mostra o menu responsivo
     }
 
     return false;                               // Retorna ao documento sem fazer mais nada
@@ -55,9 +55,11 @@ function menuShow(vel) {
 function menuChange() {
 
     if (window.innerWidth > responsive) {       // Se a viewport for maior que 'responsive':
-        menuShow(0);                            // Mostra o menu responsivo
+        $('#menulinks').css('display', 'flex');     // Muda 'display' do menu para 'flex'
+        menuShow(0);                                // Mostra o menu responsivo
     } else {                                    // Senão:
-        menuHide(0);                            // Oculta o menu responsivo
+        $('#menulinks').css('display', 'none');     // Muda 'display' do menu para 'none'
+        menuHide(0);                                // Oculta o menu responsivo
     }
 
 }
