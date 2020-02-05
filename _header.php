@@ -46,14 +46,16 @@ if ($js != "") {
     <nav class="nav">
         <a href="/"><i class="fas fa-fw fa-home"></i></a>
         <div id="menulinks">
-            <a href="/artigos.php"><i class="fas fa-fw fa-pen-nib"></i> Artigos</a>
-            <a href="/noticias.php"><i class="fas fa-fw fa-newspaper"></i> Notícias</a>
-            <a href="/contatos.php"><i class="fas fa-fw fa-mail-bulk"></i> Contatos</a>
-            <a href="/sobre.php"><i class="fas fa-fw fa-info-circle"></i> Sobre</a>
-            <a href="/procurar.php" id="procurar" title="Procurar no site"><i class="fas fa-fw fa-search"></i><span> Procurar</span></a>
+            <a <?php echo ( $menu == 'artigos' ) ? 'class="active"' : null ?> href="/artigos.php"><i class="fas fa-fw fa-pen-nib"></i> Artigos</a>
+            <a <?php echo ( $menu == 'noticias' ) ? 'class="active"' : null ?> href="/noticias.php"><i class="fas fa-fw fa-newspaper"></i> Notícias</a>
+            <a <?php echo ( $menu == 'contatos' ) ? 'class="active"' : null ?> href="/contatos.php"><i class="fas fa-fw fa-mail-bulk"></i> Contatos</a>
+            <a <?php echo ( $menu == 'sobre' ) ? 'class="active"' : null ?> href="/sobre.php"><i class="fas fa-fw fa-info-circle"></i> Sobre</a>
+            <a <?php echo ( $menu == 'procurar' ) ? 'class="active"' : null ?> href="/procurar.php" id="procurar" title="Procurar no site"><i class="fas fa-fw fa-search"></i><span> Procurar</span></a>
         </div>
         <a href="#menu" id="menu"><i class="fas fa-fw fa-bars"></i></a>
     </nav>
 
     <main class="main">
 <!-- CONTEÚDO DA PÁGINA -->
+        
+        
