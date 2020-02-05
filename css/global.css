@@ -47,6 +47,7 @@ h1, h2, h3, h4, h5, p {
 .header img {
     display: block;
     margin-right: 1rem;
+    height: 90px;
 }
 .header h1 {
     margin: 0;
