@@ -2,15 +2,8 @@
 // PHP em UTF-8
 header("Content-type: text/html; charset=utf-8");
 
-// Seleção do servidor de banco de dados //
-//if ($_SERVER['SERVER_NAME'] == 'localhost') :
-    // Conexão com MySQL do XAMPP
-    $conn = new mysqli('localhost', 'root', 'usbw', 'semnome');
-// else :
-//     // Conexão com MySQL do provedor de hospedagem
-//     // Preencha os campos conforme os dados do provedor
-//     $conn = new mysqli('', '', '', '');
-// endif;
+// Conexão com MySQL
+$conn = new mysqli('localhost', 'root', '', 'semnome');
 
 // Testando conexão
 if ($conn->connect_error) die("Falha na conexão com o DB: " . $conn->connect_error);

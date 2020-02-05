@@ -57,6 +57,8 @@ while ( $art = $res->fetch_assoc() ):
 
 TEXTO;
 
+endwhile;
+
 /************************************************/
 /*  SEUS CÓDIGOS PHP DESTA PÁGINA TERMINAM AQUI */
 /************************************************/
