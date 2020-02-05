@@ -3,16 +3,6 @@
 // Configuração inicial da página
 require ('_config.php');
 
-/*********************************************/
-/*  SEUS CÓDIGOS PHP DESTA PÁGINA FICAM AQUI */
-/*********************************************/
-
-
-
-/************************************************/
-/*  SEUS CÓDIGOS PHP DESTA PÁGINA TERMINAM AQUI */
-/************************************************/
-
 // Define o título "desta" página
 $titulo = "Template do Site";
 
@@ -23,6 +13,16 @@ $css = "";
 // Aponta para o JavaScript "desta" página. Ex.: /js/contatos.js
 // Deixe vazio para não usar JavaScript adicional nesta página
 $js = "";
+
+/*********************************************/
+/*  SEUS CÓDIGOS PHP DESTA PÁGINA FICAM AQUI */
+/*********************************************/
+
+
+
+/************************************************/
+/*  SEUS CÓDIGOS PHP DESTA PÁGINA TERMINAM AQUI */
+/************************************************/
 
 // Inclui o cabeçalho do template
 require ('_header.php');
