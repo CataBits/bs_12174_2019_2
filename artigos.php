@@ -25,43 +25,12 @@ $js = "";
 $artigos = '';      // Armazena a view de artigos
 $categorias = '';   // Armazena a view de categorias
 
-// Monta query que obtém a lista de artigos
-$sql = <<<SQL
 
-SELECT id_artigo, thumb_artigo, titulo, resumo
-FROM artigos
-WHERE
-    status_artigo = 'ativo'
-    AND
-    data_artigo <= NOW()
-ORDER BY data_artigo DESC;
+// TESTE DA FUNÇÃO
+exit(viewartigo(4));
 
-SQL;
 
-// Executar a query
-$res = $conn->query($sql);
 
-// Cria subtítulo com total de artigos
-$total = $res->num_rows;
-if ( $total > 1) $subtitulo = "Total de {$total} artigos. Mais recentes primeiro.";
-else $subtitulo = "Total de {$total} artigo. Mais recentes primeiro.";
-
-// Obter cada registro e gerar a view
-while ( $art = $res->fetch_assoc() ):
-
-    $artigos .= <<<TEXTO
-
-<div class="artigo">
-    <a href="/artigo.php?id={$art['id_artigo']}">
-        <img src="{$art['thumb_artigo']}" alt="{$art['titulo']}">
-        <h3>{$art['titulo']}</h3>
-    </a>
-    <span>{$art['resumo']}</span>
-</div>
-
-TEXTO;
-
-endwhile;
 
 // Obtendo os nomes das categorias
 $sql = "SELECT * FROM categorias";
@@ -141,5 +110,55 @@ require ('_header.php');
 
 // Inclui o rodapé do template
 require ('_footer.php');
+
+// Função que gera a view de um artigo
+function viewartigo($id) {
+
+    // Obtém a variável $conn do escopo global
+    global $conn;
+
+    // Obtendo artigo do banco de dados
+    $sql = <<<SQL
+
+SELECT id_artigo, thumb_artigo, titulo, resumo
+FROM artigos
+WHERE id_artigo = '{$id}'
+    AND status_artigo = 'ativo'
+    AND data_artigo <= NOW()
+;
+
+SQL;
+    $res = $conn->query($sql);
+
+    // Se achou o artigo
+    if ( $res->num_rows == 1 ):
+
+        // Gerar a view do artigo
+        $art = $res->fetch_assoc();
+
+        $artigo = <<<TEXTO
+
+<div class="artigo">
+    <a href="/artigo.php?id={$art['id_artigo']}">
+        <img src="{$art['thumb_artigo']}" alt="{$art['titulo']}">
+        <h3>{$art['titulo']}</h3>
+    </a>
+    <span>{$art['resumo']}</span>
+</div>
+
+TEXTO;
+
+        // Retorna com o artigo pronto
+        return $artigo;
+
+    // Se o artigo não existe ou é inválido
+    else:
+
+        // Retorna com false;
+        return false;
+
+    endif;
+
+} 
 
 ?>
