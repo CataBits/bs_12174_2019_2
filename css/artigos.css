@@ -43,7 +43,7 @@
     list-style: none;
     line-height: 1.5;
 }
-.col2 ul li:last-child {
+.col2 p:last-child {
     text-align: center;
 }
 

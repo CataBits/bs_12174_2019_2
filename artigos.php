@@ -105,10 +105,9 @@ TEXTO;
 endwhile;
 
 $categorias .= <<<TEXTO
-
-    <hr>
-    <li><a href="/artigos.php">Todas as categorias</a></li>
 </ul>
+<hr>
+<p class="center"><a href="/artigos.php">Todas as categorias</a></p>
 TEXTO;
 
 /************************************************/
