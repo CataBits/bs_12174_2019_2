@@ -42,6 +42,11 @@ SELECT id_artigo FROM artigos
 SQL;
     $res = $conn->query($sql);
 
+    // Cria subtítulo com total de artigos
+    $total = $res->num_rows;
+    if ( $total > 1) $subtitulo = "{$total} artigos. Mais recentes primeiro.";
+    else $subtitulo = "{$total} artigo.";
+
     // Obtendo cada artigo
     while ( $art = $res->fetch_assoc() ):
 
@@ -57,8 +62,6 @@ else:
 
 
 endif;
-
-exit($artigos);
 
 // Obtendo os nomes das categorias
 $sql = "SELECT * FROM categorias";
