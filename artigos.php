@@ -68,7 +68,14 @@ $sql = "SELECT * FROM categorias";
 $res = $conn->query($sql);
 
 // Preparação da view
-$categorias .= '<ul>';
+$categorias .= <<<TEXTO
+
+<ul>
+    <!--
+    <li><a href="/artigos.php">Todas as categorias</a></li>
+    <hr>
+    -->
+TEXTO;
 
 // Obtendo cada registro
 while ( $cat = $res->fetch_assoc() ) :
@@ -87,16 +94,22 @@ SQL;
     // Se o total de artigos for maior que 0
     if ( $totalart > 0 ) {
         $categorias .= <<<TEXTO
-        <li>
-            <a href="/artigos.php?cat={$cat['id_categoria']}">{$cat['categoria']}</a>
-            <sup>{$totalart}</sup>
-        </li>
+
+    <li>
+        <a href="/artigos.php?cat={$cat['id_categoria']}">{$cat['categoria']}</a>
+        <sup>{$totalart}</sup>
+    </li>
 TEXTO;
     }
 
 endwhile;
 
-$categorias .= "</ul>";
+$categorias .= <<<TEXTO
+
+    <hr>
+    <li><a href="/artigos.php">Todas as categorias</a></li>
+</ul>
+TEXTO;
 
 /************************************************/
 /*  SEUS CÓDIGOS PHP DESTA PÁGINA TERMINAM AQUI */

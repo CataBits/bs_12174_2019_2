@@ -38,6 +38,15 @@
     background: rgba(255, 255, 0, 0.164);
 }
 
+.col2 ul {
+    padding: 0 0 0 1rem;
+    list-style: none;
+    line-height: 1.5;
+}
+.col2 ul li:last-child {
+    text-align: center;
+}
+
 /* Página responsiva em resoluções maiores que 640px */
 @media (min-width: 640px) {
     .row {
