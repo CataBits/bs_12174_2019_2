@@ -97,7 +97,7 @@ SQL;
 
     <li>
         <a href="/artigos.php?cat={$cat['id_categoria']}">{$cat['categoria']}</a>
-        <sup> {$totalart}</sup>
+        <sup>{$totalart}</sup>
     </li>
 TEXTO;
     }
@@ -105,9 +105,11 @@ TEXTO;
 endwhile;
 
 $categorias .= <<<TEXTO
+
 </ul>
 <hr>
 <p class="center"><a href="/artigos.php">Todas as categorias</a></p>
+
 TEXTO;
 
 /************************************************/
