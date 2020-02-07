@@ -22,7 +22,8 @@ $js = "";
 /*********************************************/
 
 // 'Declarar' variáveis
-$artigos = '';
+$artigos = '';      // Armazena a view de artigos
+$categorias = '';   // Armazena a view de categorias
 
 // Monta query que obtém a lista de artigos
 $sql = <<<SQL
@@ -62,6 +63,41 @@ TEXTO;
 
 endwhile;
 
+// Obtendo os nomes das categorias
+$sql = "SELECT * FROM categorias";
+$res = $conn->query($sql);
+
+// Preparação da view
+$categorias .= '<ul>';
+
+// Obtendo cada registro
+while ( $cat = $res->fetch_assoc() ) :
+
+    $sql2 = <<<SQL
+SELECT COUNT(id_art_cat) AS totalart 
+FROM art_cat
+WHERE categoria_id = '{$cat['id_categoria']}';
+SQL;
+    $res2 = $conn->query($sql2);
+    
+    // Total de artigos nesta categoria
+    $tot = $res2->fetch_assoc();
+    $totalart = intval( $tot['totalart'] );
+
+    // Se o total de artigos for maior que 0
+    if ( $totalart > 0 ) {
+        $categorias .= <<<TEXTO
+        <li>
+            <a href="/artigos.php?cat={$cat['id_categoria']}">{$cat['categoria']}</a>
+            <sup>{$totalart}</sup>
+        </li>
+TEXTO;
+    }
+
+endwhile;
+
+$categorias .= "</ul>";
+
 /************************************************/
 /*  SEUS CÓDIGOS PHP DESTA PÁGINA TERMINAM AQUI */
 /************************************************/
@@ -82,6 +118,7 @@ require ('_header.php');
     <div class="col2">
 
         <h3>Categorias</h3>
+        <?php echo $categorias ?>
 
     </div>
 </div>
