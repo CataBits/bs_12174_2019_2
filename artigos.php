@@ -59,7 +59,19 @@ SQL;
 // Se idcat > 0 pediu os artigos de uma categoria
 else:
 
+    // Lista os artigos de uma categoria
+    $sql = <<<SQL
 
+SELECT artigo_id FROM art_cat
+WHERE categoria_id = '{$idcat}';
+
+SQL;
+    $res = $conn->query($sql);
+
+    /************************************************/
+    /************************************************/
+    /************************************************/
+    /************************************************/
 
 endif;
 
