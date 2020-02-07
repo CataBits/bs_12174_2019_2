@@ -47,6 +47,17 @@
     text-align: center;
 }
 
+.col2 sup {
+    font-size: .7rem;
+}
+
+.col2 sup::before {
+    content: "(";
+}
+.col2 sup::after {
+    content: ")";
+}
+
 /* Página responsiva em resoluções maiores que 640px */
 @media (min-width: 640px) {
     .row {
