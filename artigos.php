@@ -25,12 +25,40 @@ $js = "";
 $artigos = '';      // Armazena a view de artigos
 $categorias = '';   // Armazena a view de categorias
 
+// Ler o Id da categoria
+$idcat = ( isset($_GET['cat']) ) ? intval( $_GET['cat'] ) : 0 ;
 
-// TESTE DA FUNÇÃO
-exit(viewartigo(4));
+// Se idcat = 0 pediu todos os artigos
+if ( $idcat == 0 ) :
+
+    // Obtendo ids de todos os artigos
+    $sql = <<<SQL
+
+SELECT id_artigo FROM artigos
+    WHERE status_artigo = 'ativo'
+        AND data_artigo <= NOW()
+    ORDER BY data_artigo DESC;
+
+SQL;
+    $res = $conn->query($sql);
+
+    // Obtendo cada artigo
+    while ( $art = $res->fetch_assoc() ):
+
+        // Listando os artigos em "$artigos" usando a função
+        $artigos .= viewartigo( $art['id_artigo'] );
+
+    endwhile;
+
+
+// Se idcat > 0 pediu os artigos de uma categoria
+else:
 
 
 
+endif;
+
+exit($artigos);
 
 // Obtendo os nomes das categorias
 $sql = "SELECT * FROM categorias";
