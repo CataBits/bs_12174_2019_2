@@ -58,6 +58,11 @@
     content: ")";
 }
 
+.catlist {
+    background: rgb(214, 214, 214);
+    padding: .5rem;
+}
+
 /* Página responsiva em resoluções maiores que 640px */
 @media (min-width: 640px) {
     .row {

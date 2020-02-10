@@ -83,7 +83,16 @@ SQL;
 $res = $conn->query($sql);
 
 // Listando cada categoria
+$categorias = '<div class="catlist"><strong>Categorias:</strong> ';
 
+while ( $cat = $res->fetch_assoc() ) :
+
+    $categorias .= "<a href=\"\artigos.php?cat={$cat['id_categoria']}\">{$cat['categoria']}</a>, ";
+
+endwhile;
+
+// Atualizado artigo com as categorias
+$artigo .= substr($categorias, 0, -2) . '.</div>';
 
 /************************************************/
 /*  SEUS CÓDIGOS PHP DESTA PÁGINA TERMINAM AQUI */
