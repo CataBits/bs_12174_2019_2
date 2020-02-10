@@ -62,16 +62,26 @@ else:
     // Lista os artigos de uma categoria
     $sql = <<<SQL
 
-SELECT artigo_id FROM art_cat
-WHERE categoria_id = '{$idcat}';
+SELECT artigo_id 
+    FROM art_cat
+    INNER JOIN artigos ON artigo_id = id_artigo
+WHERE 
+    categoria_id = '{$idcat}'
+    AND status_artigo = 'ativo'
+    AND data_artigo <= NOW()
+ORDER BY data_artigo DESC
+;
 
 SQL;
+
+    // Executar a query
     $res = $conn->query($sql);
 
-    /************************************************/
-    /************************************************/
-    /************************************************/
-    /************************************************/
+    // Cria subtítulo com total de artigos
+    $total = $res->num_rows;
+    if ( $total == 0) header('Location: artigos.php');
+    elseif ( $total > 1) $subtitulo = "{$total} artigos. Mais recentes primeiro.";
+    else $subtitulo = "{$total} artigo.";
 
 endif;
 
