@@ -32,8 +32,10 @@ if ( $id == 0 ) header('Location: artigos.php');
 // Pesquisando artigo no banco de dados
 $sql = <<<SQL
 
-SELECT id_artigo, data_artigo, titulo, texto, autor_id,
-    thumb_autor, nome_autor, nome_tela, site, curriculo, nascimento
+SELECT id_artigo, titulo, texto, autor_id,
+        thumb_autor, nome_autor, nome_tela, site, curriculo,
+        DATE_FORMAT(data_artigo, '%d/%m/%Y às %H:%i') AS databr,
+        DATE_FORMAT(nascimento, '%d/%m/%Y') AS nascautor
     FROM artigos
     INNER JOIN autores ON autor_id = id_autor
 WHERE
@@ -43,7 +45,11 @@ WHERE
 ;
 
 SQL;
-exit($sql);
+
+    // Executar a query
+    $res = $conn->query($sql);
+
+    
 
 /************************************************/
 /*  SEUS CÓDIGOS PHP DESTA PÁGINA TERMINAM AQUI */
