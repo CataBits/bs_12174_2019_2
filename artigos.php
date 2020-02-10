@@ -24,6 +24,7 @@ $js = "";
 // 'Declarar' variáveis
 $artigos = '';      // Armazena a view de artigos
 $categorias = '';   // Armazena a view de categorias
+$titulopagina = $titulo;
 
 // Ler o Id da categoria
 $idcat = ( isset($_GET['cat']) ) ? intval( $_GET['cat'] ) : 0 ;
@@ -82,6 +83,32 @@ SQL;
     if ( $total == 0) header('Location: artigos.php');
     elseif ( $total > 1) $subtitulo = "{$total} artigos. Mais recentes primeiro.";
     else $subtitulo = "{$total} artigo.";
+
+    // Obtendo cada artigo
+    while ( $art = $res->fetch_assoc() ):
+
+        // Listando os artigos em "$artigos" usando a função
+        $artigos .= viewartigo( $art['artigo_id'] );
+
+    endwhile;
+
+    // Título da página
+    $sql = <<<SQL
+
+SELECT categoria FROM categorias 
+WHERE id_categoria = '{$idcat}';
+
+SQL;
+
+    // Executar a query
+    $res = $conn->query($sql);
+
+    // Obtendo o nome
+    $catname = $res->fetch_assoc();
+
+    // Títulos
+    $titulo = "Artigos em {$catname['categoria']}";
+    $titulopagina = $titulo;
 
 endif;
 
@@ -146,7 +173,7 @@ require ('_header.php');
 <div class="row">
     <div class="col1">
 
-        <h2>Artigos</h2>
+        <h2><?php echo $titulopagina ?></h2>
         <p class="totalart"><?php echo $subtitulo ?></p>
         <?php echo $artigos ?>
 
