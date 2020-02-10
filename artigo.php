@@ -72,7 +72,7 @@ TEXTO;
 // Obtendo as categorias deste artigo
 $sql = <<<SQL
 
-SELECT * FROM art_cat
+SELECT id_categoria, categoria FROM art_cat
 INNER JOIN categorias ON categoria_id = id_categoria
 WHERE artigo_id = '{$art['id_artigo']}'
 ORDER BY categoria;
@@ -104,6 +104,7 @@ require ('_header.php');
 ?>
 
 <?php echo $artigo ?>
+<h3>Artigos recomendados</h3>
 
 <?php
 
