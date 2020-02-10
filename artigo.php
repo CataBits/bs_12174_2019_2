@@ -49,7 +49,25 @@ SQL;
     // Executar a query
     $res = $conn->query($sql);
 
-    
+    // Se o artigo não exite
+    if ( $res->num_rows != 1 ) header('Location: artigos.php');
+
+    // Obtendo campos do artigo
+    $art = $res->fetch_assoc();
+
+    // View do artigo
+    $artigo = <<<TEXTO
+
+<h2>{$art['titulo']}</h2>
+<p class="totalart">
+    Por
+    <a href="{$art['site']}" target="_blank">{$art['nome_tela']}</a>
+    em
+    {$art['databr']}.
+</p>
+{$art['texto']}
+
+TEXTO;
 
 /************************************************/
 /*  SEUS CÓDIGOS PHP DESTA PÁGINA TERMINAM AQUI */
@@ -60,7 +78,7 @@ require ('_header.php');
 
 ?>
 
-
+<?php echo $artigo ?>
 
 <?php
 
