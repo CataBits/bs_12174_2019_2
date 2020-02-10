@@ -69,6 +69,22 @@ SQL;
 
 TEXTO;
 
+// Obtendo as categorias deste artigo
+$sql = <<<SQL
+
+SELECT * FROM art_cat
+INNER JOIN categorias ON categoria_id = id_categoria
+WHERE artigo_id = '{$art['id_artigo']}'
+ORDER BY categoria;
+
+SQL;
+
+// Executando a query
+$res = $conn->query($sql);
+
+// Listando cada categoria
+
+
 /************************************************/
 /*  SEUS CÓDIGOS PHP DESTA PÁGINA TERMINAM AQUI */
 /************************************************/
