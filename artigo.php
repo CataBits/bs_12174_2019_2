@@ -85,13 +85,15 @@ $res = $conn->query($sql);
 // Listando cada categoria
 $categorias = '<div class="catlist"><strong>Categorias:</strong> ';
 
+// Montando o HTML com a lista de categorias
 while ( $cat = $res->fetch_assoc() ) :
 
+    // View das categorias
     $categorias .= "<a href=\"\artigos.php?cat={$cat['id_categoria']}\">{$cat['categoria']}</a>, ";
 
 endwhile;
 
-// Atualizado artigo com as categorias
+// Atualizando artigo com as categorias
 $artigo .= substr($categorias, 0, -2) . '.</div>';
 
 /************************************************/
@@ -104,6 +106,7 @@ require ('_header.php');
 ?>
 
 <?php echo $artigo ?>
+
 <h3>Artigos recomendados</h3>
 
 <?php
