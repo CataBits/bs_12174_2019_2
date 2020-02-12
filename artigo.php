@@ -85,16 +85,66 @@ $res = $conn->query($sql);
 // Listando cada categoria
 $categorias = '<div class="catlist"><strong>Categorias:</strong> ';
 
+// SQL da lista de recomendados
+$sqlrec = "SELECT artigo_id FROM art_cat WHERE artigo_id != '{$art['id_artigo']}' AND (";
+
 // Montando o HTML com a lista de categorias
 while ( $cat = $res->fetch_assoc() ) :
 
     // View das categorias
     $categorias .= "<a href=\"\artigos.php?cat={$cat['id_categoria']}\">{$cat['categoria']}</a>, ";
 
+    // SQL da lista de recomendados
+    $sqlrec .= " categoria_id = '{$cat['id_categoria']}' OR";
+
 endwhile;
 
 // Atualizando artigo com as categorias
 $artigo .= substr($categorias, 0, -2) . '.</div>';
+
+// Lista de recomendados
+$sqlrec = substr($sqlrec, 0, -2) . ") ORDER BY RAND() LIMIT 3;";
+
+// Executa lista de recomendados
+$res = $conn->query($sqlrec);
+
+// View da lista de recomendados
+$viewrec = '<div class="row">';
+
+// Loop da lista de recomendados
+while ( $rec = $res->fetch_assoc() ) :
+
+    $sql = <<<SQL
+    
+SELECT id_artigo, thumb_artigo, titulo, resumo
+FROM artigos
+WHERE 
+    id_artigo = '{$rec['artigo_id']}'
+    AND status_artigo = 'ativo'
+    AND data_artigo <= NOW()
+;
+    
+SQL;
+
+exit($sql);
+
+    $viewrec .= <<<TEXTO
+
+    <div class="col">
+        <a href="/artigo.php?id={id_artigo}">
+            <img src="{thumb_artigo}" alt="{titulo}">
+            <h4>{titulo}</h4>
+        </a>
+        <span>{resumo}</span>
+    </div>
+
+TEXTO;
+
+endwhile;
+
+$viewrec .= "</div>";
+
+exit($viewrec);
 
 /************************************************/
 /*  SEUS CÓDIGOS PHP DESTA PÁGINA TERMINAM AQUI */
