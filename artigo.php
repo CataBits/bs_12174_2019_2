@@ -108,43 +108,56 @@ $sqlrec = substr($sqlrec, 0, -2) . ") ORDER BY RAND() LIMIT 3;";
 // Executa lista de recomendados
 $res = $conn->query($sqlrec);
 
-// View da lista de recomendados
-$viewrec = '<div class="row">';
+// Se não tem artigos recomendados
+if ( $res->num_rows < 1 ) :
 
-// Loop da lista de recomendados
-while ( $rec = $res->fetch_assoc() ) :
+    $viewrec = '';
 
-    $sql = <<<SQL
-    
-SELECT id_artigo, thumb_artigo, titulo, resumo
-FROM artigos
-WHERE 
-    id_artigo = '{$rec['artigo_id']}'
-    AND status_artigo = 'ativo'
-    AND data_artigo <= NOW()
-;
-    
+else :
+
+    // View da lista de recomendados
+    $viewrec = "\n<h3>Artigos recomendados</h3>\n<div class=\"row\">";
+
+    // Loop da lista de recomendados
+    while ( $rec = $res->fetch_assoc() ) :
+
+        // Query que obtém o artigo
+        $sqlart = <<<SQL
+        
+    SELECT id_artigo, thumb_artigo, titulo, resumo
+    FROM artigos
+    WHERE 
+        id_artigo = '{$rec['artigo_id']}'
+        AND status_artigo = 'ativo'
+        AND data_artigo <= NOW()
+    ;
+        
 SQL;
 
-exit($sql);
+        // Executa a query que obtém o artigo
+        $resart = $conn->query($sqlart);
 
-    $viewrec .= <<<TEXTO
+        // Obtem os campos do artigo
+        $artrec = $resart->fetch_assoc();
 
-    <div class="col">
-        <a href="/artigo.php?id={id_artigo}">
-            <img src="{thumb_artigo}" alt="{titulo}">
-            <h4>{titulo}</h4>
-        </a>
-        <span>{resumo}</span>
-    </div>
+        // Gerando o view
+        $viewrec .= <<<TEXTO
+
+        <div class="col">
+            <a href="/artigo.php?id={$artrec['id_artigo']}">
+                <img src="{$artrec['thumb_artigo']}" alt="{$artrec['titulo']}">
+                <h4>{$artrec['titulo']}</h4>
+            </a>
+            <span>{$artrec['resumo']}</span>
+        </div>
 
 TEXTO;
 
-endwhile;
+    endwhile;
 
-$viewrec .= "</div>";
+    $viewrec .= "</div>";
 
-exit($viewrec);
+endif;
 
 /************************************************/
 /*  SEUS CÓDIGOS PHP DESTA PÁGINA TERMINAM AQUI */
@@ -157,7 +170,7 @@ require ('_header.php');
 
 <?php echo $artigo ?>
 
-<h3>Artigos recomendados</h3>
+<?php echo $viewrec ?>
 
 <?php
 
