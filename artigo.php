@@ -33,9 +33,8 @@ if ( $id == 0 ) header('Location: artigos.php');
 $sql = <<<SQL
 
 SELECT id_artigo, titulo, texto, autor_id,
-        thumb_autor, nome_autor, nome_tela, site, curriculo,
-        DATE_FORMAT(data_artigo, '%d/%m/%Y às %H:%i') AS databr,
-        DATE_FORMAT(nascimento, '%d/%m/%Y') AS nascautor
+        thumb_autor, nome_autor, nome_tela, email, site, curriculo, telefone,
+        DATE_FORMAT(data_artigo, '%d/%m/%Y às %H:%i') AS databr
     FROM artigos
     INNER JOIN autores ON autor_id = id_autor
 WHERE
@@ -61,7 +60,7 @@ SQL;
 <h2>{$art['titulo']}</h2>
 <p class="totalart">
     Por
-    <a href="{$art['site']}" target="_blank">{$art['nome_tela']}</a>
+    <a href="{$art['site']}" id="modalAutor" target="_blank">{$art['nome_tela']}</a>
     em
     {$art['databr']}.
 </p>
@@ -165,6 +164,34 @@ TEXTO;
 
 endif;
 
+// Calcular idade do autor
+
+// Modal com dados do autor
+$mautor = <<<TEXTO
+
+<div class="modal">
+
+    <div class="wrapmodal">
+        <div class="autor">
+            <div class="autorid">
+                <img src="{$art['thumb_autor']}" alt="{$art['nome_tela']}">
+                <h4>{$art['nome_tela']}</h4>
+                <small>{$art['nome_autor']}</small>
+                <div>{} anos</div>
+            </div>
+            <div class="curriculo">{$art['curriculo']}</div>
+            <ul>
+                <li>Site: <a href="{$art['site']}" target="_blank">{$art['site']}</a></li>
+                <li>E-mail: <a href="mailto:{$art['email']}" target="_blank">{$art['email']}</a></li>
+                <li>Telefone(s): {$art['telefone']}</li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+TEXTO;
+
 /************************************************/
 /*  SEUS CÓDIGOS PHP DESTA PÁGINA TERMINAM AQUI */
 /************************************************/
@@ -177,6 +204,8 @@ require ('_header.php');
 <?php echo $artigo ?>
 
 <?php echo $viewrec ?>
+
+<?php echo $mautor ?>
 
 <?php
 
