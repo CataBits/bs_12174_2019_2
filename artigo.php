@@ -178,6 +178,10 @@ $mautor = <<<TEXTO
 
     <div class="wrapmodal">
         <div class="autor">
+            <div class="autortit">
+                Sobre o autor
+                <a href="#fechar" class="fechamodal"><i class="fas fa-fw fa-times"></i></a>
+            </div>
             <div class="autorid">
                 <img src="{$art['thumb_autor']}" alt="{$art['nome_tela']}">
                 <h4>{$art['nome_tela']}</h4>
@@ -190,6 +194,9 @@ $mautor = <<<TEXTO
                 <li>E-mail: <a href="mailto:{$art['email']}" target="_blank">{$art['email']}</a></li>
                 <li>Telefone(s): {$art['telefone']}</li>
             </ul>
+            <div class="autorft">
+            <a href="#fechar" class="fechamodal">Fechar</a>
+            </div>
         </div>
     </div>
 
