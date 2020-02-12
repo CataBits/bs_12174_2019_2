@@ -171,8 +171,6 @@ $date = new DateTime($dataNascimento);
 $interval = $date->diff( new DateTime( date('Y-m-d') ) );
 $idadeautor = $interval->format( '%Y anos' );
 
-exit($idadeautor);
-
 // Modal com dados do autor
 $mautor = <<<TEXTO
 
@@ -184,7 +182,7 @@ $mautor = <<<TEXTO
                 <img src="{$art['thumb_autor']}" alt="{$art['nome_tela']}">
                 <h4>{$art['nome_tela']}</h4>
                 <small>{$art['nome_autor']}</small>
-                <div>{} anos</div>
+                <div>{$idadeautor}</div>
             </div>
             <div class="curriculo">{$art['curriculo']}</div>
             <ul>
