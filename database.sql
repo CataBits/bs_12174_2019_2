@@ -156,6 +156,14 @@ INSERT INTO artigos (
     'Como será que o PHP vai saber que este artigo é agendado para o futuro?',
     '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas hendrerit elit nec est varius tristique.</p><p>Nunc ante tortor, facilisis vel diam lobortis, consequat aliquam lorem.</p><p>Fusce dolor orci, fringilla eget mauris ac, lobortis imperdiet odio. </p>',
     '1'
+),
+(
+    '2020-02-11 18:25:00',
+    'https://picsum.photos/200',
+    'Artigo mais novo que os outros.',
+    'Este artigo é muito novo e você pode consultá-lo.',
+    '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas hendrerit elit nec est varius tristique.</p><p>Nunc ante tortor, facilisis vel diam lobortis, consequat aliquam lorem.</p><p>Fusce dolor orci, fringilla eget mauris ac, lobortis imperdiet odio. </p>',
+    '3'
 );
 
 -- Populando a tabela "art_cat"
@@ -172,5 +180,6 @@ VALUES
     (3, 5),
     (3, 7),
     (4, 1),
-    (4, 8)
+    (4, 8),
+    (5, 3)
 ;
