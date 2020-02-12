@@ -136,6 +136,12 @@
     height: 100%;
     display: none;
 }
+.modal > .fechamodal {
+    float: right;
+    padding: .5rem;
+    font-size: 2rem;
+    color: white;
+}
 
 /* Página responsiva em resoluções maiores que 640px */
 @media (min-width: 640px) {

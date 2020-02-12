@@ -176,7 +176,10 @@ $mautor = <<<TEXTO
 
 <div id="modal" class="modal">
 
+    <a href="#fechar" class="fechamodal"><i class="fas fa-fw fa-times"></i></a>
+    
     <div class="wrapmodal">
+
         <div class="autor">
             <div class="autortit">
                 <span>Sobre o autor</span>
