@@ -33,7 +33,8 @@ if ( $id == 0 ) header('Location: artigos.php');
 $sql = <<<SQL
 
 SELECT id_artigo, titulo, texto, autor_id,
-        thumb_autor, nome_autor, nome_tela, email, site, curriculo, telefone,
+        thumb_autor, nome_autor, nome_tela, email,
+        site, curriculo, telefone, nascimento,
         DATE_FORMAT(data_artigo, '%d/%m/%Y às %H:%i') AS databr
     FROM artigos
     INNER JOIN autores ON autor_id = id_autor
@@ -165,6 +166,12 @@ TEXTO;
 endif;
 
 // Calcular idade do autor
+$dataNascimento = $art['nascimento'];
+$date = new DateTime($dataNascimento);
+$interval = $date->diff( new DateTime( date('Y-m-d') ) );
+$idadeautor = $interval->format( '%Y anos' );
+
+exit($idadeautor);
 
 // Modal com dados do autor
 $mautor = <<<TEXTO
