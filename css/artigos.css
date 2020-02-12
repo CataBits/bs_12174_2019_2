@@ -81,6 +81,32 @@
 .col3 img {
     width: 90%;
 }
+.wrapmodal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.autor {
+    background: white;
+    width: 100%;
+    max-width: 450px;
+}
+.autorid {
+    overflow: auto;
+}
+.autorid img {
+    float: left;
+    max-width: 100px;
+    height: auto;
+    margin-right: 1rem;
+}
+.curriculo {
+    padding: 1rem 1rem 0 1rem;
+}
+.autor > ul {
+    font-size: .8rem;
+}
 
 /* Modal do Autor */
 .modal {
