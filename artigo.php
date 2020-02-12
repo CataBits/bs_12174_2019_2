@@ -17,7 +17,7 @@ $css = "/css/artigos.css";
 
 // Aponta para o JavaScript "desta" página. Ex.: /js/contatos.js
 // Deixe vazio para não usar JavaScript adicional nesta página
-$js = "";
+$js = "/js/artigos.js";
 
 /*********************************************/
 /*  SEUS CÓDIGOS PHP DESTA PÁGINA FICAM AQUI */
@@ -174,7 +174,7 @@ $idadeautor = $interval->format( '%Y anos' );
 // Modal com dados do autor
 $mautor = <<<TEXTO
 
-<div class="modal">
+<div id="modal" class="modal">
 
     <div class="wrapmodal">
         <div class="autor">
