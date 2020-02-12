@@ -116,7 +116,13 @@ if ( $res->num_rows < 1 ) :
 else :
 
     // View da lista de recomendados
-    $viewrec = "\n<h3>Artigos recomendados</h3>\n<div class=\"row\">";
+    $viewrec = <<<TEXTO
+
+<div class="recomendados">    
+    <h3>Artigos recomendados</h3>
+    <div class="row">
+
+TEXTO;
 
     // Loop da lista de recomendados
     while ( $rec = $res->fetch_assoc() ) :
@@ -155,7 +161,7 @@ TEXTO;
 
     endwhile;
 
-    $viewrec .= "</div>";
+    $viewrec .= "\n\t</div>\n</div>";
 
 endif;
 
