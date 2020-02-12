@@ -3,6 +3,7 @@
     display: flex;
     width: 100%;
     flex-direction: column;
+    justify-content: center;
 }
 .col2 {
     width: 100%;
@@ -61,6 +62,23 @@
 .catlist {
     background: rgb(214, 214, 214);
     padding: .5rem;
+}
+
+.recomendados {
+    margin-top: 2rem;
+    border-top: 3px dotted green;
+}
+.recomendados > h3 {
+    margin-bottom: 3rem;
+}
+
+.col3 {
+    width: 33.3%;
+    text-align: center;
+    padding: 0 .5rem;
+}
+.col3 img {
+    width: 90%;
 }
 
 /* Página responsiva em resoluções maiores que 640px */

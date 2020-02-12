@@ -119,7 +119,7 @@ else :
     $viewrec = <<<TEXTO
 
 <div class="recomendados">    
-    <h3>Artigos recomendados</h3>
+    <h3>Leia também...</h3>
     <div class="row">
 
 TEXTO;
@@ -149,7 +149,7 @@ SQL;
         // Gerando o view
         $viewrec .= <<<TEXTO
 
-        <div class="col">
+        <div class="col3">
             <a href="/artigo.php?id={$artrec['id_artigo']}">
                 <img src="{$artrec['thumb_artigo']}" alt="{$artrec['titulo']}">
                 <h4>{$artrec['titulo']}</h4>
