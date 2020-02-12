@@ -71,11 +71,12 @@
 .recomendados > h3 {
     margin-bottom: 3rem;
 }
-
 .col3 {
-    width: 33.3%;
     text-align: center;
-    padding: 0 .5rem;
+    margin-bottom: 3rem;
+}
+.col3:last-child {
+    margin-bottom: 1rem;
 }
 .col3 img {
     width: 90%;
@@ -107,5 +108,14 @@
         float: left;
         margin-right: 1rem;
         max-height: 80px; 
+    }
+    
+    .col3 {
+        width: 33.3%;
+        text-align: center;
+        padding: 0 .5rem;
+    }
+    .col3 img {
+        width: 90%;
     }
 }
