@@ -94,18 +94,35 @@
 }
 .autorid {
     overflow: auto;
+    padding: 1rem;
 }
 .autorid img {
     float: left;
-    max-width: 100px;
-    height: auto;
+    width: 100px;
+    height: 100px;
     margin-right: 1rem;
+    border-radius: 50%;
 }
 .curriculo {
     padding: 1rem 1rem 0 1rem;
+    text-align: justify;
 }
 .autor > ul {
     font-size: .8rem;
+    line-height: 1.5;
+}
+.autortit {
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: .5rem;
+    background: rgb(218, 218, 218);
+    display: flex;
+    justify-content: space-between;
+}
+.autorft {
+    padding: .5rem;
+    text-align: center;
+    background: rgb(218, 218, 218);
 }
 
 /* Modal do Autor */

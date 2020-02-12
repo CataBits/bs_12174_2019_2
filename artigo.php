@@ -179,7 +179,7 @@ $mautor = <<<TEXTO
     <div class="wrapmodal">
         <div class="autor">
             <div class="autortit">
-                Sobre o autor
+                <span>Sobre o autor</span>
                 <a href="#fechar" class="fechamodal"><i class="fas fa-fw fa-times"></i></a>
             </div>
             <div class="autorid">
@@ -195,7 +195,7 @@ $mautor = <<<TEXTO
                 <li>Telefone(s): {$art['telefone']}</li>
             </ul>
             <div class="autorft">
-            <a href="#fechar" class="fechamodal">Fechar</a>
+                <a href="#fechar" class="fechamodal">Fechar</a>
             </div>
         </div>
     </div>
